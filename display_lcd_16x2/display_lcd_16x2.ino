@@ -18,6 +18,11 @@ LiquidCrystal_I2C  lcd(I2C_ADDR,En_pin,Rw_pin,Rs_pin,D4_pin,D5_pin,D6_pin,D7_pin
 void setup()
 {
   lcd.begin (16,2);
+}
+
+void loop()
+{
+//  lcd.clear();
   lcd.setBacklightPin(BACKLIGHT_PIN,POSITIVE);
   lcd.setBacklight(HIGH);
   lcd.home ();
@@ -25,10 +30,7 @@ void setup()
   lcd.print("Seja bem vindo!");
   lcd.setCursor (0,1);
   lcd.print(":)");
-}
-
-void loop()
-{
+  
  lcd.setBacklight(HIGH);      // Backlight off
  delay(3000);
  lcd.setBacklight(LOW);     // Backlight on
